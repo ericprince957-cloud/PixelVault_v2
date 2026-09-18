@@ -48,7 +48,7 @@ export default function Favorites() {
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <Link to={`/explore/${item.id}`}>
-                <div className="aspect-[4/3] relative overflow-hidden" style={{ backgroundColor: item.color || '#7c3aed' }}>
+                <div className="aspect-[4/3] relative overflow-hidden" style={{ backgroundColor: item.color || '#f59e0b' }}>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   {item.thumbnail && <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />}
                   <div className="absolute bottom-3 left-3">

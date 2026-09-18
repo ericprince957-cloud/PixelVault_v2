@@ -82,7 +82,7 @@ export default function Dashboard() {
               >
                 <div
                   className="w-12 h-12 rounded-[10px_8px_12px_9px] flex-shrink-0"
-                  style={{ backgroundColor: item.color || '#7c3aed' }}
+                  style={{ backgroundColor: item.color || '#f59e0b' }}
                 >
                   {item.thumbnail && <img src={item.thumbnail} alt={`${item.title} preview`} className="w-full h-full object-cover rounded-[10px_8px_12px_9px]" />}
                 </div>

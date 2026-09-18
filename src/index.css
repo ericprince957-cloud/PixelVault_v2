@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #7c3aed;
-  --color-primary-dark: #6d28d9;
-  --color-primary-light: #a78bfa;
-  --color-background: #0a0a0f;
-  --color-surface: #16161f;
-  --color-surface-light: #1f1f2e;
+  --color-primary: #f59e0b;
+  --color-primary-dark: #d97706;
+  --color-primary-light: #fbbf24;
+  --color-background: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-light: #1f1f1f;
   --color-text: #fafafa;
   --color-muted: #a1a1aa;
   --color-border: #27272a;
   --color-success: #22c55e;
-  --color-danger: #f43f5e;
-  --color-warning: #fbbf24;
-  --color-accent: #ec4899;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-accent: #ea580c;
 }
 
 * {
@@ -27,8 +27,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: 
-    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(234, 88, 12, 0.03) 0%, transparent 50%);
 }
 
 /* Hand-drawn feel - slightly rough borders */
@@ -47,14 +47,14 @@ body {
 /* Sketchy shadow effect */
 .sketchy-shadow {
   box-shadow: 
-    2px 2px 0px rgba(124, 58, 237, 0.1),
-    4px 4px 0px rgba(124, 58, 237, 0.05);
+    2px 2px 0px rgba(245, 158, 11, 0.1),
+    4px 4px 0px rgba(245, 158, 11, 0.05);
 }
 
 .sketchy-shadow:hover {
   box-shadow: 
-    3px 3px 0px rgba(124, 58, 237, 0.15),
-    6px 6px 0px rgba(124, 58, 237, 0.08);
+    3px 3px 0px rgba(245, 158, 11, 0.15),
+    6px 6px 0px rgba(245, 158, 11, 0.08);
 }
 
 /* Doodle underline */
@@ -122,7 +122,7 @@ body {
 
 /* Marker highlight */
 .marker-highlight {
-  background: linear-gradient(120deg, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
+  background: linear-gradient(120deg, rgba(245, 158, 11, 0.15) 0%, rgba(234, 88, 12, 0.1) 100%);
   padding: 2px 8px;
   border-radius: 4px 8px 6px 10px;
 }
@@ -199,9 +199,9 @@ body {
   animation: bounce-soft 2s ease-in-out infinite;
 }
 
-/* Gradient text - warmer, more organic */
+/* Gradient text - bold, masculine */
 .gradient-text {
-  background: linear-gradient(135deg, #a78bfa, #ec4899, #fbbf24);
+  background: linear-gradient(135deg, #f59e0b, #ea580c, #fbbf24);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -219,8 +219,8 @@ body {
   background-image: repeating-linear-gradient(
     transparent,
     transparent 31px,
-    rgba(124, 58, 237, 0.05) 31px,
-    rgba(124, 58, 237, 0.05) 32px
+    rgba(245, 158, 11, 0.05) 31px,
+    rgba(245, 158, 11, 0.05) 32px
   );
 }
 
@@ -228,10 +228,10 @@ body {
 .washi-tape {
   background: repeating-linear-gradient(
     45deg,
-    rgba(124, 58, 237, 0.1),
-    rgba(124, 58, 237, 0.1) 4px,
-    rgba(236, 72, 153, 0.1) 4px,
-    rgba(236, 72, 153, 0.1) 8px
+    rgba(245, 158, 11, 0.1),
+    rgba(245, 158, 11, 0.1) 4px,
+    rgba(234, 88, 12, 0.1) 4px,
+    rgba(234, 88, 12, 0.1) 8px
   );
 }
 

@@ -51,7 +51,7 @@ export default function ContentDetail() {
           {/* Hero image - organic shape */}
           <div
             className="aspect-video rounded-[20px_16px_22px_14px] overflow-hidden mb-6 relative border-2 border-border"
-            style={{ backgroundColor: item.color || '#7c3aed' }}
+            style={{ backgroundColor: item.color || '#f59e0b' }}
           >
             {item.thumbnail && (
               <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" />
@@ -171,7 +171,7 @@ export default function ContentDetail() {
                 to={`/explore/${rel.id}`}
                 className="group rounded-[14px_10px_16px_12px] border-2 border-border bg-surface overflow-hidden hover:border-primary/40 transition-all hover:-translate-y-1 hand-placed"
               >
-                <div className="aspect-[4/3]" style={{ backgroundColor: rel.color || '#7c3aed' }}>
+                <div className="aspect-[4/3]" style={{ backgroundColor: rel.color || '#f59e0b' }}>
                   {rel.thumbnail && <img src={rel.thumbnail} alt={`${rel.title} - related item`} className="w-full h-full object-cover" loading="lazy" />}
                 </div>
                 <div className="p-3">

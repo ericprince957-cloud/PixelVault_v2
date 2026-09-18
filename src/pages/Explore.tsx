@@ -169,7 +169,7 @@ export default function Explore() {
               {/* Thumbnail */}
               <div
                 className="aspect-[4/3] relative overflow-hidden"
-                style={{ backgroundColor: item.color || '#7c3aed' }}
+                style={{ backgroundColor: item.color || '#f59e0b' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 {item.thumbnail && (
@@ -222,7 +222,7 @@ export default function Explore() {
             >
               <div
                 className="w-16 h-16 rounded-[12px_10px_14px_11px] flex-shrink-0"
-                style={{ backgroundColor: item.color || '#7c3aed' }}
+                style={{ backgroundColor: item.color || '#f59e0b' }}
               >
                 {item.thumbnail && <img src={item.thumbnail} alt={`${item.title} thumbnail`} className="w-full h-full object-cover rounded-[12px_10px_14px_11px]" />}
               </div>

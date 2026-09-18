@@ -101,8 +101,8 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       {[
-                        { color: '#7c3aed', rot: '-1deg' },
-                        { color: '#ec4899', rot: '0.5deg' },
+                        { color: '#f59e0b', rot: '-1deg' },
+                        { color: '#ea580c', rot: '0.5deg' },
                         { color: '#22c55e', rot: '-0.5deg' },
                         { color: '#fbbf24', rot: '1deg' },
                       ].map((item, i) => (
