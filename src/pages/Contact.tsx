@@ -45,87 +45,88 @@ export default function Contact() {
   return (
     <div className="animate-fade-in max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">Get in <span className="gradient-text">Touch</span></h1>
+        <div className="text-4xl mb-4">✦</div>
+        <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Get in <span className="gradient-text doodle-underline">Touch</span></h1>
         <p className="text-muted">Have a question or feedback? We'd love to hear from you.</p>
       </div>
 
       {status === 'sent' ? (
-        <div className="text-center py-12 rounded-2xl border border-border bg-surface">
-          <CheckCircle size={48} className="text-success mx-auto mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Message Sent!</h2>
+        <div className="text-center py-12 rounded-[20px_16px_22px_18px] border-2 border-border bg-surface">
+          <div className="text-5xl mb-4">🎉</div>
+          <h2 className="text-xl font-black mb-2">Message Sent!</h2>
           <p className="text-muted mb-6">Thank you for reaching out. We'll get back to you soon.</p>
-          <button onClick={() => setStatus('idle')} className="px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors">
-            Send Another
+          <button onClick={() => setStatus('idle')} className="px-5 py-2.5 rounded-[10px_8px_12px_9px] bg-primary text-white text-sm font-bold hover:bg-primary-dark transition-colors">
+            Send Another ✦
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-surface p-6 sm:p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="rounded-[20px_16px_22px_18px] border-2 border-border bg-surface p-6 sm:p-8 space-y-5">
           {status === 'error' && (
-            <div className="flex items-center gap-2 p-3 rounded-lg bg-danger/10 border border-danger/20 text-sm text-danger">
+            <div className="flex items-center gap-2 p-3 rounded-[10px_8px_12px_9px] bg-danger/10 border border-danger/20 text-sm text-danger">
               <AlertCircle size={16} /> Failed to send message. Please try again or email us directly.
             </div>
           )}
 
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium mb-1.5" htmlFor="name">Name</label>
+              <label className="block text-sm font-bold mb-1.5" htmlFor="name">Name</label>
               <input
                 id="name"
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
                 placeholder="Your name"
-                className={`w-full px-4 py-2.5 rounded-lg bg-background border ${errors.name ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
+                className={`w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 ${errors.name ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
               />
-              {errors.name && <p className="text-xs text-danger mt-1">{errors.name}</p>}
+              {errors.name && <p className="text-xs text-danger mt-1 font-medium">{errors.name}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1.5" htmlFor="email">Email</label>
+              <label className="block text-sm font-bold mb-1.5" htmlFor="email">Email</label>
               <input
                 id="email"
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className={`w-full px-4 py-2.5 rounded-lg bg-background border ${errors.email ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
+                className={`w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 ${errors.email ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
               />
-              {errors.email && <p className="text-xs text-danger mt-1">{errors.email}</p>}
+              {errors.email && <p className="text-xs text-danger mt-1 font-medium">{errors.email}</p>}
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="subject">Subject</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="subject">Subject</label>
             <input
               id="subject"
               type="text"
               value={subject}
               onChange={e => setSubject(e.target.value)}
               placeholder="What's this about?"
-              className={`w-full px-4 py-2.5 rounded-lg bg-background border ${errors.subject ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
+              className={`w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 ${errors.subject ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors`}
             />
-            {errors.subject && <p className="text-xs text-danger mt-1">{errors.subject}</p>}
+            {errors.subject && <p className="text-xs text-danger mt-1 font-medium">{errors.subject}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="message">Message</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="message">Message</label>
             <textarea
               id="message"
               value={message}
               onChange={e => setMessage(e.target.value)}
               placeholder="Tell us more..."
               rows={5}
-              className={`w-full px-4 py-2.5 rounded-lg bg-background border ${errors.message ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors resize-none`}
+              className={`w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 ${errors.message ? 'border-danger' : 'border-border'} focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors resize-none`}
             />
-            {errors.message && <p className="text-xs text-danger mt-1">{errors.message}</p>}
+            {errors.message && <p className="text-xs text-danger mt-1 font-medium">{errors.message}</p>}
           </div>
 
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary hover:bg-primary-dark text-white font-medium transition-colors disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-[14px_10px_16px_12px] bg-primary hover:bg-primary-dark text-white font-bold transition-all hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50"
           >
             {status === 'sending' ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-            {status === 'sending' ? 'Sending...' : 'Send Message'}
+            {status === 'sending' ? 'Sending...' : 'Send Message ✦'}
           </button>
         </form>
       )}

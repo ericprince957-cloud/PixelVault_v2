@@ -42,8 +42,9 @@ export default function FAQ() {
   return (
     <div className="animate-fade-in max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-          Frequently Asked <span className="gradient-text">Questions</span>
+        <div className="text-4xl mb-4">✦ ✦ ✦</div>
+        <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">
+          Frequently Asked <span className="gradient-text doodle-underline">Questions</span>
         </h1>
         <p className="text-muted">Everything you need to know about PixelVault</p>
       </div>
@@ -52,17 +53,17 @@ export default function FAQ() {
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="rounded-xl border border-border bg-surface overflow-hidden transition-all"
+            className="rounded-[16px_12px_18px_14px] border-2 border-border bg-surface overflow-hidden transition-all hover:border-primary/20"
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-light/50 transition-colors"
               aria-expanded={openIndex === i}
             >
-              <span className="font-medium pr-4">{faq.q}</span>
+              <span className="font-bold pr-4">{faq.q}</span>
               <ChevronDown
                 size={20}
-                className={`text-muted flex-shrink-0 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
+                className={`text-muted flex-shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-primary' : ''}`}
               />
             </button>
             {openIndex === i && (

@@ -22,7 +22,7 @@ export default function ContentDetail() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <Loader2 size={32} className="animate-spin text-primary mx-auto mb-4" />
+          <div className="text-4xl mb-4 animate-wiggle">✦</div>
           <p className="text-muted">Loading...</p>
         </div>
       </div>
@@ -34,36 +34,36 @@ export default function ContentDetail() {
       {/* Back button */}
       <button
         onClick={() => navigate(-1)}
-        className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-6 transition-colors"
+        className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-6 transition-colors font-medium"
       >
-        <ArrowLeft size={16} /> Back
+        <ArrowLeft size={16} /> ← Back
       </button>
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Main content */}
         <div className="lg:col-span-2">
-          {/* Hero image */}
+          {/* Hero image - organic shape */}
           <div
-            className="aspect-video rounded-2xl overflow-hidden mb-6 relative"
-            style={{ backgroundColor: item.color || '#6366f1' }}
+            className="aspect-video rounded-[20px_16px_22px_14px] overflow-hidden mb-6 relative border-2 border-border"
+            style={{ backgroundColor: item.color || '#7c3aed' }}
           >
             {item.thumbnail && (
               <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover" />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
 
           {/* Title & description */}
-          <h1 className="text-2xl sm:text-3xl font-bold mb-3">{item.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-black mb-3 tracking-tight">{item.title}</h1>
           {item.description && (
             <p className="text-muted leading-relaxed mb-6">{item.description}</p>
           )}
 
-          {/* Tags */}
+          {/* Tags - playful pills */}
           {item.tags && item.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
               {item.tags.map(tag => (
-                <span key={tag} className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-light border border-border text-xs text-muted">
+                <span key={tag} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-light border border-border text-xs text-muted font-medium hover:border-primary/30 transition-colors">
                   <Tag size={10} /> {tag}
                 </span>
               ))}
@@ -71,31 +71,31 @@ export default function ContentDetail() {
           )}
         </div>
 
-        {/* Sidebar */}
+        {/* Sidebar - craft cards */}
         <div className="space-y-4">
           {/* Actions */}
           {user && (
-            <div className="rounded-xl border border-border bg-surface p-4 space-y-3">
+            <div className="rounded-[16px_12px_18px_14px] border-2 border-border bg-surface p-4 space-y-3">
               <button
                 onClick={() => toggleFavorite(item.id)}
-                className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm transition-all ${
+                className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-[12px_10px_14px_11px] font-bold text-sm transition-all ${
                   favorites.includes(item.id)
-                    ? 'bg-danger/10 text-danger border border-danger/20'
-                    : 'bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20'
+                    ? 'bg-danger/10 text-danger border-2 border-danger/20'
+                    : 'bg-primary/10 text-primary border-2 border-primary/20 hover:bg-primary/20'
                 }`}
               >
                 <Heart size={16} fill={favorites.includes(item.id) ? 'currentColor' : 'none'} />
-                {favorites.includes(item.id) ? 'Favorited' : 'Add to Favorites'}
+                {favorites.includes(item.id) ? 'Favorited ♡' : 'Add to Favorites'}
               </button>
               <div className="relative">
                 <button
                   onClick={() => setShowCollections(!showCollections)}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-light border border-border text-sm text-muted hover:text-text transition-colors"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-[12px_10px_14px_11px] bg-surface-light border-2 border-border text-sm text-muted hover:text-text transition-colors"
                 >
                   <FolderOpen size={16} /> Add to Collection
                 </button>
                 {showCollections && (
-                  <div className="absolute top-full mt-2 w-full rounded-lg bg-surface border border-border shadow-xl py-2 z-10 animate-fade-in">
+                  <div className="absolute top-full mt-2 w-full rounded-[14px_10px_16px_12px] bg-surface border-2 border-border shadow-xl py-2 z-10 animate-fade-in">
                     {collections.length === 0 ? (
                       <p className="px-4 py-2 text-sm text-muted">No collections yet</p>
                     ) : (
@@ -103,9 +103,9 @@ export default function ContentDetail() {
                         <button
                           key={col.id}
                           onClick={() => { addToCollection(col.id, item.id); setShowCollections(false); }}
-                          className="w-full text-left px-4 py-2 text-sm text-muted hover:text-text hover:bg-surface-light transition-colors"
+                          className="w-full text-left px-4 py-2.5 text-sm text-muted hover:text-text hover:bg-surface-light transition-colors font-medium"
                         >
-                          {col.name}
+                          📁 {col.name}
                         </button>
                       ))
                     )}
@@ -116,31 +116,37 @@ export default function ContentDetail() {
           )}
 
           {/* Meta info */}
-          <div className="rounded-xl border border-border bg-surface p-4 space-y-3">
+          <div className="rounded-[16px_12px_18px_14px] border-2 border-border bg-surface p-4 space-y-4">
             {item.creator && (
               <div className="flex items-center gap-3">
-                <User size={16} className="text-muted" />
+                <div className="w-8 h-8 rounded-[8px_6px_10px_7px] bg-primary/10 flex items-center justify-center">
+                  <User size={14} className="text-primary" />
+                </div>
                 <div>
                   <p className="text-xs text-muted">Creator</p>
-                  <p className="text-sm font-medium">{item.creator}</p>
+                  <p className="text-sm font-bold">{item.creator}</p>
                 </div>
               </div>
             )}
             {item.category && (
               <div className="flex items-center gap-3">
-                <Tag size={16} className="text-muted" />
+                <div className="w-8 h-8 rounded-[8px_6px_10px_7px] bg-accent/10 flex items-center justify-center">
+                  <Tag size={14} className="text-accent" />
+                </div>
                 <div>
                   <p className="text-xs text-muted">Category</p>
-                  <p className="text-sm font-medium">{item.category}</p>
+                  <p className="text-sm font-bold">{item.category}</p>
                 </div>
               </div>
             )}
             {item.date && (
               <div className="flex items-center gap-3">
-                <Calendar size={16} className="text-muted" />
+                <div className="w-8 h-8 rounded-[8px_6px_10px_7px] bg-success/10 flex items-center justify-center">
+                  <Calendar size={14} className="text-success" />
+                </div>
                 <div>
                   <p className="text-xs text-muted">Date</p>
-                  <p className="text-sm font-medium">{item.date}</p>
+                  <p className="text-sm font-bold">{item.date}</p>
                 </div>
               </div>
             )}
@@ -151,20 +157,20 @@ export default function ContentDetail() {
       {/* Related items */}
       {related.length > 0 && (
         <div className="mt-12">
-          <h2 className="text-xl font-bold mb-6">Related in {item.category}</h2>
+          <h2 className="text-xl font-black mb-6 tracking-tight">More in {item.category} ✦</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {related.map(rel => (
               <Link
                 key={rel.id}
                 to={`/explore/${rel.id}`}
-                className="group rounded-xl border border-border bg-surface overflow-hidden hover:border-primary/30 transition-all"
+                className="group rounded-[14px_10px_16px_12px] border-2 border-border bg-surface overflow-hidden hover:border-primary/40 transition-all hover:-translate-y-1 hand-placed"
               >
-                <div className="aspect-[4/3]" style={{ backgroundColor: rel.color || '#6366f1' }}>
+                <div className="aspect-[4/3]" style={{ backgroundColor: rel.color || '#7c3aed' }}>
                   {rel.thumbnail && <img src={rel.thumbnail} alt="" className="w-full h-full object-cover" loading="lazy" />}
                 </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-medium group-hover:text-primary transition-colors truncate">{rel.title}</h3>
-                  <p className="text-xs text-muted mt-0.5">{rel.creator}</p>
+                  <h3 className="text-sm font-bold group-hover:text-primary transition-colors truncate">{rel.title}</h3>
+                  <p className="text-xs text-muted mt-0.5">by {rel.creator}</p>
                 </div>
               </Link>
             ))}

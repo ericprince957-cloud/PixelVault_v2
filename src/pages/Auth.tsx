@@ -25,39 +25,40 @@ export function Login() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md animate-fade-in">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold mb-2">Welcome back</h1>
+          <div className="text-4xl mb-3">✦</div>
+          <h1 className="text-2xl font-black mb-2 tracking-tight">Welcome back!</h1>
           <p className="text-muted">Sign in to your PixelVault account</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <form onSubmit={handleSubmit} className="space-y-4 rounded-[20px_16px_22px_18px] border-2 border-border bg-surface p-6 sm:p-8">
           {!configured && (
-            <div className="p-3 rounded-lg bg-warning/10 border border-warning/20 text-sm text-warning">
-              Authentication is not configured. Add Supabase credentials to enable login.
+            <div className="p-3 rounded-[10px_8px_12px_9px] bg-warning/10 border border-warning/20 text-sm text-warning">
+              ⚠️ Authentication not configured. Add Supabase credentials to enable login.
             </div>
           )}
           
           {error && (
-            <div className="flex items-center gap-2 p-3 rounded-lg bg-danger/10 border border-danger/20 text-sm text-danger">
+            <div className="flex items-center gap-2 p-3 rounded-[10px_8px_12px_9px] bg-danger/10 border border-danger/20 text-sm text-danger">
               <AlertCircle size={16} /> {error}
             </div>
           )}
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="email">Email</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+              className="w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="password">Password</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="password">Password</label>
             <div className="relative">
               <input
                 id="password"
@@ -65,7 +66,7 @@ export function Login() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 pr-10 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+                className="w-full px-4 py-3 pr-10 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
               />
               <button
                 type="button"
@@ -79,25 +80,25 @@ export function Login() {
 
           <div className="flex items-center justify-between">
             <label className="flex items-center gap-2 text-sm text-muted cursor-pointer">
-              <input type="checkbox" className="rounded border-border" />
+              <input type="checkbox" className="rounded border-border accent-primary" />
               Remember me
             </label>
-            <a href="#" className="text-sm text-primary hover:text-primary-light">Forgot password?</a>
+            <a href="#" className="text-sm text-primary hover:text-primary-light font-medium">Forgot password?</a>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-medium transition-colors disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-[14px_10px_16px_12px] bg-primary hover:bg-primary-dark text-white font-bold transition-all hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50"
           >
             {loading && <Loader2 size={18} className="animate-spin" />}
-            Sign In
+            Sign In ✦
           </button>
         </form>
 
         <p className="text-center text-sm text-muted mt-6">
           Don't have an account?{' '}
-          <Link to="/signup" className="text-primary hover:text-primary-light font-medium">Sign up</Link>
+          <Link to="/signup" className="text-primary hover:text-primary-light font-bold">Sign up →</Link>
         </p>
       </div>
     </div>
@@ -130,51 +131,52 @@ export function Signup() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md animate-fade-in">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold mb-2">Create your account</h1>
+          <div className="text-4xl mb-3">✦</div>
+          <h1 className="text-2xl font-black mb-2 tracking-tight">Create your account</h1>
           <p className="text-muted">Start organizing your digital world</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <form onSubmit={handleSubmit} className="space-y-4 rounded-[20px_16px_22px_18px] border-2 border-border bg-surface p-6 sm:p-8">
           {!configured && (
-            <div className="p-3 rounded-lg bg-warning/10 border border-warning/20 text-sm text-warning">
-              Authentication is not configured. Add Supabase credentials to enable signup.
+            <div className="p-3 rounded-[10px_8px_12px_9px] bg-warning/10 border border-warning/20 text-sm text-warning">
+              ⚠️ Authentication not configured. Add Supabase credentials to enable signup.
             </div>
           )}
 
           {error && (
-            <div className="flex items-center gap-2 p-3 rounded-lg bg-danger/10 border border-danger/20 text-sm text-danger">
+            <div className="flex items-center gap-2 p-3 rounded-[10px_8px_12px_9px] bg-danger/10 border border-danger/20 text-sm text-danger">
               <AlertCircle size={16} /> {error}
             </div>
           )}
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="fullName">Full Name</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="fullName">Full Name</label>
             <input
               id="fullName"
               type="text"
               value={fullName}
               onChange={e => setFullName(e.target.value)}
-              placeholder="John Doe"
-              className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+              placeholder="Your name"
+              className="w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="email">Email</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+              className="w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="password">Password</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="password">Password</label>
             <div className="relative">
               <input
                 id="password"
@@ -182,7 +184,7 @@ export function Signup() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 pr-10 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+                className="w-full px-4 py-3 pr-10 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
               />
               <button
                 type="button"
@@ -195,30 +197,30 @@ export function Signup() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" htmlFor="confirmPassword">Confirm Password</label>
+            <label className="block text-sm font-bold mb-1.5" htmlFor="confirmPassword">Confirm Password</label>
             <input
               id="confirmPassword"
               type="password"
               value={confirmPassword}
               onChange={e => setConfirmPassword(e.target.value)}
               placeholder="••••••••"
-              className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
+              className="w-full px-4 py-3 rounded-[12px_10px_14px_11px] bg-background border-2 border-border focus:border-primary focus:outline-none text-text placeholder:text-muted/50 transition-colors"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-medium transition-colors disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-[14px_10px_16px_12px] bg-primary hover:bg-primary-dark text-white font-bold transition-all hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50"
           >
             {loading && <Loader2 size={18} className="animate-spin" />}
-            Create Account
+            Create Account ✦
           </button>
         </form>
 
         <p className="text-center text-sm text-muted mt-6">
           Already have an account?{' '}
-          <Link to="/login" className="text-primary hover:text-primary-light font-medium">Sign in</Link>
+          <Link to="/login" className="text-primary hover:text-primary-light font-bold">Sign in →</Link>
         </p>
       </div>
     </div>
