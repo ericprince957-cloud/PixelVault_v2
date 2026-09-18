@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Search, FolderOpen, Shield, Zap, Star, BarChart3, ArrowRight } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function Features() {
+  useDocumentHead({
+    title: 'Features — PixelVault',
+    description: 'Explore PixelVault features: smart organization, fast search, secure storage, collections, task management, and a simple dashboard.',
+  });
   const features = [
     {
       icon: FolderOpen,

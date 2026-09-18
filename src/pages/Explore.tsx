@@ -2,11 +2,16 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { Search, Filter, Heart, Grid, List, Loader2, AlertCircle } from 'lucide-react';
 
 const CATEGORIES = ['All', 'UI Design', 'Photography', 'Illustration', '3D Art', 'Typography', 'Motion', 'Branding'];
 
 export default function Explore() {
+  useDocumentHead({
+    title: 'Explore Curated Digital Assets — PixelVault',
+    description: 'Browse our curated collection of digital assets. Search by category, creator, or tags to find the perfect content for your projects.',
+  });
   const { contentItems, loadingContent, error, fetchContent, favorites, toggleFavorite } = useApp();
   const { user } = useAuth();
   const [search, setSearch] = useState('');
@@ -219,7 +224,7 @@ export default function Explore() {
                 className="w-16 h-16 rounded-[12px_10px_14px_11px] flex-shrink-0"
                 style={{ backgroundColor: item.color || '#7c3aed' }}
               >
-                {item.thumbnail && <img src={item.thumbnail} alt="" className="w-full h-full object-cover rounded-[12px_10px_14px_11px]" />}
+                {item.thumbnail && <img src={item.thumbnail} alt={`${item.title} thumbnail`} className="w-full h-full object-cover rounded-[12px_10px_14px_11px]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-bold text-sm group-hover:text-primary transition-colors truncate">{item.title}</h3>

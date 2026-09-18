@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function Contact() {
+  useDocumentHead({
+    title: 'Contact Us — PixelVault',
+    description: 'Get in touch with the PixelVault team. Have questions, feedback, or need support? We\'d love to hear from you.',
+  });
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');

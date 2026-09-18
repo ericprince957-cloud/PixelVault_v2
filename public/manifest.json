@@ -1,0 +1,17 @@
+{
+  "name": "PixelVault",
+  "short_name": "PixelVault",
+  "description": "Curated digital-asset discovery and organization platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

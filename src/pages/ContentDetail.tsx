@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { ArrowLeft, Heart, Calendar, User, Tag, FolderOpen, Loader2 } from 'lucide-react';
 
 export default function ContentDetail() {
@@ -13,6 +14,11 @@ export default function ContentDetail() {
 
   const item = contentItems.find(c => c.id === id);
   const related = item ? contentItems.filter(c => c.category === item.category && c.id !== item.id).slice(0, 4) : [];
+
+  useDocumentHead({
+    title: item ? `${item.title} — PixelVault` : 'Content Detail — PixelVault',
+    description: item?.description || 'View details of this curated digital asset on PixelVault.',
+  });
 
   useEffect(() => {
     if (user) fetchCollections();
@@ -166,7 +172,7 @@ export default function ContentDetail() {
                 className="group rounded-[14px_10px_16px_12px] border-2 border-border bg-surface overflow-hidden hover:border-primary/40 transition-all hover:-translate-y-1 hand-placed"
               >
                 <div className="aspect-[4/3]" style={{ backgroundColor: rel.color || '#7c3aed' }}>
-                  {rel.thumbnail && <img src={rel.thumbnail} alt="" className="w-full h-full object-cover" loading="lazy" />}
+                  {rel.thumbnail && <img src={rel.thumbnail} alt={`${rel.title} - related item`} className="w-full h-full object-cover" loading="lazy" />}
                 </div>
                 <div className="p-3">
                   <h3 className="text-sm font-bold group-hover:text-primary transition-colors truncate">{rel.title}</h3>

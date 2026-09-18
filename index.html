@@ -3,18 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PixelVault — Your Digital World, Organized in One Place</title>
-    <meta name="description" content="PixelVault is a curated digital-asset discovery and organization platform. Discover, organize, and manage your digital content in one beautiful place." />
-    <meta property="og:title" content="PixelVault — Your Digital World, Organized" />
-    <meta property="og:description" content="Discover, organize, and manage your digital content in one beautiful place." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Primary Meta -->
+    <title>PixelVault — Curated Digital Assets, Beautifully Organized</title>
+    <meta name="title" content="PixelVault — Curated Digital Assets, Beautifully Organized" />
+    <meta name="description" content="Discover, organize, and manage your digital content with PixelVault. A curated platform for creators, designers, and teams who value beautiful organization." />
+    <meta name="author" content="PixelVault" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="canonical" href="https://pixelvault.app/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pixelvault.app/" />
+    <meta property="og:title" content="PixelVault — Curated Digital Assets, Beautifully Organized" />
+    <meta property="og:description" content="Discover, organize, and manage your digital content with PixelVault. A curated platform for creators, designers, and teams." />
+    <meta property="og:site_name" content="PixelVault" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://pixelvault.app/" />
+    <meta name="twitter:title" content="PixelVault — Curated Digital Assets, Beautifully Organized" />
+    <meta name="twitter:description" content="Discover, organize, and manage your digital content with PixelVault. A curated platform for creators, designers, and teams." />
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PixelVault",
+      "url": "https://pixelvault.app",
+      "logo": "https://pixelvault.app/favicon.svg",
+      "description": "A curated digital-asset discovery and organization platform for creators, designers, and teams.",
+      "sameAs": [
+        "https://twitter.com/pixelvault",
+        "https://github.com/pixelvault"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://pixelvault.app/contact"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PixelVault",
+      "url": "https://pixelvault.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pixelvault.app/explore?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PixelVault",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "url": "https://pixelvault.app",
+      "description": "A curated digital-asset discovery and organization platform for creators, designers, and teams.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "NGN"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "5000",
+          "priceCurrency": "NGN"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "15000",
+          "priceCurrency": "NGN"
+        }
+      ],
+      "featureList": [
+        "Smart Organization",
+        "Fast Search",
+        "Secure Storage",
+        "Collections",
+        "Task Management",
+        "Activity Dashboard"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: LocalBusiness / Digital Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DigitalDocument",
+      "name": "PixelVault",
+      "url": "https://pixelvault.app",
+      "description": "Curated digital-asset discovery and organization platform",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PixelVault",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pixelvault.app/favicon.svg"
+        }
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pixelvault.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Explore",
+          "item": "https://pixelvault.app/explore"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Features",
+          "item": "https://pixelvault.app/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pricing",
+          "item": "https://pixelvault.app/pricing"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PixelVault?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PixelVault is a curated digital-asset discovery and organization platform. It helps creators, designers, and teams discover, organize, and manage their digital content in one beautiful place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PixelVault free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! PixelVault offers a free plan with access to the curated catalog, up to 10 favorites, and 1 collection. For more features, check out our Pro and Business plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How secure is my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use Supabase with Row Level Security (RLS) to ensure your data is access-controlled. Only you can see your favorites, collections, and tasks. All connections are encrypted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use PixelVault on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! PixelVault is fully responsive and optimized for mobile devices. We've designed it to work beautifully on phones, tablets, and desktops."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Critical CSS to prevent FOUC -->
     <style>
+      *, *::before, *::after { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
-      body { font-family: 'Inter', system-ui, sans-serif; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #0a0a0f;
+        color: #fafafa;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root { min-height: 100vh; }
     </style>
   </head>
   <body>

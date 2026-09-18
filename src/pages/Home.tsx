@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Search, Shield, FolderOpen, BarChart3, Zap, Star, ArrowRight, Heart } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function Home() {
+  useDocumentHead({
+    title: 'PixelVault — Curated Digital Assets, Beautifully Organized',
+    description: 'Discover, organize, and manage your digital content with PixelVault. A curated platform for creators, designers, and teams who value beautiful organization.',
+  });
   const features = [
     { icon: FolderOpen, title: 'Smart Organization', desc: 'Organize your digital assets into collections with intelligent categorization and tagging.' },
     { icon: Search, title: 'Fast Search', desc: 'Find any asset instantly with powerful search across titles, tags, creators, and categories.' },

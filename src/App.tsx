@@ -20,13 +20,17 @@ const Collections = lazy(() => import('./pages/Collections'));
 const Tasks = lazy(() => import('./pages/Tasks'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-// Auth pages (not lazy-loaded since they're small)
-import { Login, Signup } from './pages/Auth';
+// Lazy-loaded auth pages to reduce main bundle
+const Login = lazy(() => import('./pages/Login').then(m => ({ default: m.Login })));
+const Signup = lazy(() => import('./pages/Signup').then(m => ({ default: m.Signup })));
 
 function LoadingFallback() {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
-      <Loader2 size={32} className="animate-spin text-primary" />
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+      <div className="w-10 h-10 rounded-[14px_10px_16px_12px] bg-gradient-to-br from-primary to-accent flex items-center justify-center animate-wiggle">
+        <span className="text-white font-black text-xs">pv</span>
+      </div>
+      <p className="text-muted text-sm">Loading...</p>
     </div>
   );
 }

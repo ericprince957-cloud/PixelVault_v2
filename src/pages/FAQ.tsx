@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 const faqs = [
   {
@@ -37,6 +38,11 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  useDocumentHead({
+    title: 'FAQ — Frequently Asked Questions | PixelVault',
+    description: 'Find answers to common questions about PixelVault: pricing, security, mobile support, payments, and more.',
+  });
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (

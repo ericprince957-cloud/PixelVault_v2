@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Home } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function NotFound() {
+  useDocumentHead({
+    title: 'Page Not Found — PixelVault',
+    description: 'The page you are looking for does not exist. Return to the PixelVault homepage.',
+    noindex: true,
+  });
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">
       <div className="text-center animate-fade-in">

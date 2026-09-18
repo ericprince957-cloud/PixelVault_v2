@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { FolderOpen, Plus, Trash2, X, Loader2 } from 'lucide-react';
 
 export default function Collections() {
+  useDocumentHead({
+    title: 'My Collections — PixelVault',
+    description: 'Organize your digital assets into custom collections on PixelVault.',
+    noindex: true,
+  });
   const { collections, createCollection, deleteCollection, loadingCollections } = useApp();
   const [showCreate, setShowCreate] = useState(false);
   const [newName, setNewName] = useState('');

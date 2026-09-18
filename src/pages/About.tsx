@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Users, Target, Lightbulb, ArrowRight } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function About() {
+  useDocumentHead({
+    title: 'About PixelVault — Our Mission & Values',
+    description: 'Learn about PixelVault, our mission to help creators organize their digital world, and the values that guide everything we build.',
+  });
   return (
     <div className="animate-fade-in">
       {/* Hero */}

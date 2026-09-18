@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pixelvault.app/sitemap.xml
+
+# PixelVault - Curated Digital Asset Platform
+# https://pixelvault.app

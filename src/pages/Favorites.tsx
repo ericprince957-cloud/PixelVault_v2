@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { Heart, Loader2 } from 'lucide-react';
 
 export default function Favorites() {
+  useDocumentHead({
+    title: 'My Favorites — PixelVault',
+    description: 'View and manage your favorited digital assets in PixelVault.',
+    noindex: true,
+  });
   const { contentItems, favorites, toggleFavorite, loadingFavorites } = useApp();
   const favoriteItems = contentItems.filter(item => favorites.includes(item.id));
 

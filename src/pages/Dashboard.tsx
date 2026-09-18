@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { Heart, FolderOpen, CheckSquare, Activity, Clock, ArrowRight } from 'lucide-react';
 
 export default function Dashboard() {
+  useDocumentHead({
+    title: 'Dashboard — PixelVault',
+    description: 'Your PixelVault dashboard: overview of favorites, collections, tasks, and recent activity.',
+    noindex: true,
+  });
   const { user, profile } = useAuth();
   const { favorites, collections, tasks, activities, contentItems } = useApp();
 
@@ -78,7 +84,7 @@ export default function Dashboard() {
                   className="w-12 h-12 rounded-[10px_8px_12px_9px] flex-shrink-0"
                   style={{ backgroundColor: item.color || '#7c3aed' }}
                 >
-                  {item.thumbnail && <img src={item.thumbnail} alt="" className="w-full h-full object-cover rounded-[10px_8px_12px_9px]" />}
+                  {item.thumbnail && <img src={item.thumbnail} alt={`${item.title} preview`} className="w-full h-full object-cover rounded-[10px_8px_12px_9px]" />}
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-bold group-hover:text-primary transition-colors truncate">{item.title}</p>

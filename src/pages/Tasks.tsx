@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { useApp, Task } from '../context/AppContext';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 import { Plus, Check, Trash2, X, Loader2, CheckSquare, Circle } from 'lucide-react';
 
 export default function Tasks() {
+  useDocumentHead({
+    title: 'My Tasks — PixelVault',
+    description: 'Manage your tasks and to-dos in PixelVault. Track priorities, due dates, and completion status.',
+    noindex: true,
+  });
   const { tasks, createTask, updateTask, deleteTask, loadingTasks } = useApp();
   const [showCreate, setShowCreate] = useState(false);
   const [newTitle, setNewTitle] = useState('');

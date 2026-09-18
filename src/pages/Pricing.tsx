@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Check, Zap, Building2, Crown } from 'lucide-react';
+import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function Pricing() {
+  useDocumentHead({
+    title: 'Pricing Plans — PixelVault',
+    description: 'Choose the PixelVault plan that fits your needs. Free, Pro, and Business tiers with transparent pricing in NGN.',
+  });
   const plans = [
     {
       name: 'Free',
